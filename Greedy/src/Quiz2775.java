@@ -25,10 +25,10 @@ public class Quiz2775 {
             return n;
         }
 
-        int sum = 0;
-        for (int i = 0; i <= n; i++) {
-            sum += getNumberOfPeople(k - 1, i);
+        if (n == 0) {
+            return 0;
         }
-        return sum;
+
+        return getNumberOfPeople(k, n - 1) + getNumberOfPeople(k - 1, n);
     }
 }
